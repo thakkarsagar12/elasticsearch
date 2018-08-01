@@ -15,23 +15,23 @@ import java.util.Date;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
 
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-public abstract class Auditable<U> {
-
-    @CreatedBy
-    protected U createdBy;
-    @CreatedDate
-    @Temporal(TIMESTAMP)
-    protected Date creationDate;
-    @LastModifiedBy
-    protected U lastModifiedBy;
-    @LastModifiedDate
-    @Temporal(TIMESTAMP)
-    protected Date lastModifiedDate;
-}
+//@MappedSuperclass
+//@EntityListeners(AuditingEntityListener.class)
+//@Getter
+//@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@ToString
+//public abstract class Auditable<U> {
+//
+//    @CreatedBy
+//    protected U createdBy;
+//    @CreatedDate
+//    @Temporal(TIMESTAMP)
+//    protected Date creationDate;
+//    @LastModifiedBy
+//    protected U lastModifiedBy;
+//    @LastModifiedDate
+//    @Temporal(TIMESTAMP)
+//    protected Date lastModifiedDate;
+//}

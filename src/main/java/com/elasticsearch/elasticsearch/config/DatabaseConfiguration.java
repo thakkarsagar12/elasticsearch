@@ -1,0 +1,36 @@
+package com.elasticsearch.elasticsearch.config;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import java.sql.SQLException;
+
+@Configuration
+@EnableJpaRepositories("com.elasticsearch.elasticsearch.service")
+@EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
+@EnableTransactionManagement
+@EnableElasticsearchRepositories("com.elasticsearch.elasticsearch.repository")
+public class DatabaseConfiguration {
+
+    private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
+
+
+    /**
+     * Open the TCP port for the H2 database, so it is available remotely.
+     *
+     * @return the H2 database TCP server
+     * @throws SQLException if the server failed to start
+     */
+    /*@Bean(initMethod = "start", destroyMethod = "stop")
+    @Profile(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT)
+    public Object h2TCPServer() throws SQLException {
+        log.debug("Starting H2 database");
+        return H2ConfigurationHelper.createServer();
+    }*/
+
+}
